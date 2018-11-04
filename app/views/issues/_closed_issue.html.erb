@@ -1,0 +1,6 @@
+<% if User.current.admin? && @issue.persisted? && @issue.closed? %>
+    <p id="closed_on_date_area">
+      <%= form.date_field(:closed_on, :size => 10, :required => @issue.required_attribute?('closed_on')) %>
+      <%= calendar_for('issue_closed_on') %>
+    </p>
+<% end %>
